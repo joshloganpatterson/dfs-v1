@@ -1,0 +1,6 @@
+build/
+data/
+logs/
+lib/
+*.class
+.idea/
