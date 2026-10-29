@@ -59,7 +59,7 @@ public final class ThreadedServer {
         }
     }
 
-    // runs on a worker, reads commands from one connection and passes them to the handler
+    // runs on a worker and reads commands from one connection and passes them to the handler
     private void serve(Socket socket) {
         Connection connection;
         try {
@@ -81,7 +81,6 @@ public final class ThreadedServer {
         } catch (SocketTimeoutException e) {
             log.info("closing idle connection %s", connection.remoteAddress());
         } catch (IOException e) {
-            // the other side went away
         }
     }
 
